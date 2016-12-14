@@ -1,4 +1,4 @@
-package ru.stqa.pft.addressbook;
+package ru.stqa.pft.addressbook.tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
@@ -8,8 +8,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
+import ru.stqa.pft.addressbook.model.ContactData;
 
-public class ContactTests {
+public class ContactCreationTests {
     FirefoxDriver wd;
     
     @BeforeMethod
@@ -36,7 +37,7 @@ public class ContactTests {
 
 
         groupCreation();
-        groupForms(new FormGroups("Alexey", "Sitnikov", "Moscow", "988", "alexey.sitnikov@ya.ru"));
+        groupForms(new ContactData("Alexey", "Sitnikov", "Moscow", "988", "alexey.sitnikov@ya.ru"));
         enterInfo();
         returnToHomepage();
     }
@@ -49,7 +50,7 @@ public class ContactTests {
         wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
     }
 
-    private void groupForms(FormGroups formGroups) {
+    private void groupForms(ContactData formGroups) {
         wd.findElement(By.name("firstname")).click();
         wd.findElement(By.name("firstname")).clear();
         wd.findElement(By.name("firstname")).sendKeys(formGroups.getFirstName());

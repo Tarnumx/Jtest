@@ -1,13 +1,13 @@
-package ru.stqa.pft.addressbook;
+package ru.stqa.pft.addressbook.model;
 
-public class FormGroups {
+public class ContactData {
   private final String firstName;
   private final String lastName;
   private final String address;
   private final String phoneNumMob;
   private final String email;
 
-  public FormGroups(String firstName, String lastName, String address, String phoneNumMob, String email) {
+  public ContactData(String firstName, String lastName, String address, String phoneNumMob, String email) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.address = address;
